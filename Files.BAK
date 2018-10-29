@@ -1,0 +1,47 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  FILES
+ FileName: FILES.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments: 
+ Дан файл, содержащий текст, записанный строчными русскими буквами. 
+ Получить в другом файле тот же текст, записанный заглавными буквами.
+ 
+ 
+ readchar(C),        Read a char, bind C to it 
+    upper_lower(D,C),
+    write(D),
+******************************************************************************/
+
+include "files.inc"
+
+global domains
+  file = input; output
+
+predicates
+  readFile()
+  changeChar(char)
+clauses
+  readFile():- eof(input), !.
+  readFile():- readchar(Char),  changeChar(Char), readFile().
+  changeChar(Char):- upper_lower(NewChar, Char), write(NewChar); !.
+  
+goal
+  InputFileName = "D:/inputFile.txt",
+  OutputFileName = "D:/outputFile.txt",
+
+  openread(input, InputFileName), 
+  write("input file opened"), nl,
+  openwrite(output, OutputFileName), !,
+  write("output file opened"), nl,
+  
+  readdevice(input),
+  writedevice(output),
+  
+  readFile(),
+  
+  closefile(input),
+  closefile(output).

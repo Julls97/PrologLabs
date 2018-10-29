@@ -1,0 +1,30 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  DICTIONARY
+ FileName: DICTIONARY.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments:
+******************************************************************************/
+
+include "dictionary.inc"
+
+domains
+	ru, eng = symbol
+
+predicates
+	dictionary(ru, eng)
+
+clauses
+	dictionary(мама, mother).
+	dictionary(папа, father).
+	dictionary(брат, brother).
+	dictionary(сестра, sister).
+	dictionary(кошка, cat).
+	dictionary(собака, dog).
+
+goal
+	dictionary(кошка, X), write("Кошка по-английски '", X, "'."), nl,
+	dictionary(Y, cat), write("Cat по-русски '", Y, "'."), nl.

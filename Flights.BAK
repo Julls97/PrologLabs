@@ -1,0 +1,24 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  FLIGHTS
+ FileName: FLIGHTS.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments:
+******************************************************************************/
+
+include "flights.inc"
+
+predicates
+
+  flights()
+
+clauses
+
+  flights():-!.
+
+goal
+
+  flights().

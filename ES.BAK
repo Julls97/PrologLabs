@@ -1,0 +1,24 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  ES
+ FileName: ES.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments:
+******************************************************************************/
+
+include "es.inc"
+
+predicates
+
+  es()
+
+clauses
+
+  es():-!.
+
+goal
+
+  es().

@@ -1,0 +1,41 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  FLIGHTS
+ FileName: FLIGHTS.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments:
+******************************************************************************/
+
+include "flights.inc"
+
+predicates
+	flight(integer, string, integer).
+	flight_search(integer, string, integer).
+	flights_all().
+	
+clauses
+	flight(1234, "Msk", 1500).
+	flight(8794, "SPb", 4890).
+	flight(5653, "Kz", 8920).
+	flight(5652, "Kz", 6125).
+	flight(5651, "Kz", 5465).
+	flight(3251, "Nsb", 13020).
+	flight(7894, "Chlb", 10400).
+	
+	flight_search(X, Y, Z) :-
+		flight(X, Y, New_Z), Z > New_Z, 
+		write("Flight number: ", X, "    Destination city: ", Y, "    Cost: ", New_Z), nl.
+	
+	flights_all():- flight(X, Y, Z), write("Flight number: ", X, "    Destination city: ", Y, "    Cost: ", Z), nl, fail.	
+	
+goal
+%	flights_all(), nl.
+	
+%	flight(X, "Kz", Z), nl.
+
+	flight(3251, Y, Z), nl.
+
+%	flight_search(X, "Kz", 7000), nl.

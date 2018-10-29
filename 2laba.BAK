@@ -1,0 +1,24 @@
+/*****************************************************************************
+
+		Copyright (c) My Company
+
+ Project:  2LABA
+ FileName: 2LABA.PRO
+ Purpose: No description
+ Written by: Visual Prolog
+ Comments:
+******************************************************************************/
+
+include "2laba.inc"
+
+predicates
+
+  2laba()
+
+clauses
+
+  2laba():-!.
+
+goal
+
+  2laba().
